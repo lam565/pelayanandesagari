@@ -17,7 +17,7 @@ function isiKotak($pdf, $kata, $tKotak)
 //FUNGSI LABEL
 function labelForm($pdf, $label)
 {
-    $pdf->Cell(60, 3.4, $label, 'L', 0, 'L');
+    $pdf->Cell(65, 3.4, $label, 'L', 0, 'L');
     $pdf->Cell(3.4, 3.4, ':', 0, 0, 'L');
 }
 
@@ -796,7 +796,7 @@ $pdf->Cell(8 * $t1, $t1, '2. Wabah Penyakit ', 0, 0, 'L');
 isiKotak($pdf, '', 1);
 $pdf->Cell(8 * $t1, $t1, '3. Kecelakaan ', 0, 0, 'L');
 $pdf->Cell(0, $t1, '', 'R', 1);
-$pdf->Cell($tab + $t1, $t1, ' ','L',0);
+$pdf->Cell(68.4, $t1, '','L',0);
 isiKotak($pdf, '', 1);
 $pdf->Cell(8 * $t1, $t1, '4. Kriminalitas ', 0, 0, 'L');
 isiKotak($pdf, '', 1);
@@ -823,6 +823,113 @@ $pdf->Cell(0, $t1, '', 'R', 1);
 $pdf->Cell(0, $t1, '', 'LBR', 1, 'L');
 $pdf->Ln(1);
 //END OF KEMATIAN
+
+//HALAMAN 3
+$pdf->AddPage();
+
+//PENGANGKATAN ANAK
+$pdf->SetFont('Times', 'B', $fz2);
+$pdf->Cell(0, $t1, 'PENGANGKATAN ANAK', 'LTR', 1, 'L');
+
+$pdf->SetFont('Times', '', $fz1);
+
+labelForm($pdf, '1. Nama anak angkat');
+isiKotak($pdf, '', 30);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '2. Nomor Akta Kelahiran');
+isiKotak($pdf, '', 25);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '3. Tanggal/Bulan/Tahun Penerbitan Akta Kelahiran');
+$pdf->Cell(4 * $t1, $t1, 'Tgl : ', 0, 0, 'C');
+isiKotak($pdf, '', 2);
+$pdf->Cell(4 * $t1, $t1, 'Bln : ', 0, 0, 'C');
+isiKotak($pdf, '', 2);
+$pdf->Cell(4 * $t1, $t1, 'Thn : ', 0, 0, 'C');
+isiKotak($pdf, '', 4);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '4. Dinas Kab/Kota yang Menerbitkan Akta Kelahiran');
+isiKotak($pdf, '', 30);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '5. Nama Ibu Kandung');
+isiKotak($pdf, '', 30);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '6. NIK Ibu Kandung');
+isiKotak($pdf, '', 16);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '7. Kewarganegaraan');
+isiKotak($pdf, '', 25);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '8. Nama Ayah Kandung');
+isiKotak($pdf, '', 30);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '9. NIK Ayah Kandung');
+isiKotak($pdf, '', 16);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '10. Kewarganegaraan');
+isiKotak($pdf, '', 25);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '11. Nama Ibu Angkat');
+isiKotak($pdf, '', 30);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '12. NIK Ibu Angkat');
+isiKotak($pdf, '', 16);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '13. Nomor Passport');
+isiKotak($pdf, '', 16);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '14. Nama Ayah Angkat');
+isiKotak($pdf, '', 30);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '15. NIK Ayah Angkat');
+isiKotak($pdf, '', 16);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '16. Nomor Passport');
+isiKotak($pdf, '', 16);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '17. Nama Pengadilan');
+isiKotak($pdf, '', 20);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '18. Tanggal Penetapan Pengadilan');
+$pdf->Cell(4 * $t1, $t1, 'Tgl : ', 0, 0, 'C');
+isiKotak($pdf, '', 2);
+$pdf->Cell(4 * $t1, $t1, 'Bln : ', 0, 0, 'C');
+isiKotak($pdf, '', 2);
+$pdf->Cell(4 * $t1, $t1, 'Thn : ', 0, 0, 'C');
+isiKotak($pdf, '', 4);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '19. Nomor Penetapan Pengadilan');
+isiKotak($pdf, '', 25);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '20. Nama Lembaga Penetapan Pengadilan');
+isiKotak($pdf, '', 20);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '21. Tempat Lembaga Penetapan Pengadilan');
+isiKotak($pdf, '', 20);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+$pdf->Cell(0, $t1, '', 'LBR', 1, 'L');
+$pdf->Ln(1);
+//END OF PENGANGKATAN ANAK
 
 
 $pdf->Output();
