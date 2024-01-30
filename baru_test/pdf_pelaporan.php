@@ -928,7 +928,7 @@ isiKotak($pdf, '', 20);
 $pdf->Cell(0, $t1, '', 'R', 1);
 
 $pdf->Cell(0, $t1, '', 'LBR', 1, 'L');
-$pdf->Ln(1);
+$pdf->Ln(2);
 //END OF PENGANGKATAN ANAK
 
 //PENGAKUAN ANAK
@@ -1014,7 +1014,7 @@ isiKotak($pdf, '', 20);
 $pdf->Cell(0, $t1, '', 'R', 1);
 
 $pdf->Cell(0, $t1, '', 'LBR', 1, 'L');
-$pdf->Ln(1);
+$pdf->Ln(2);
 //END OF PENGAKUAN ANAK
 
 //PENGESAHAN ANAK
@@ -1094,7 +1094,11 @@ labelForm($pdf, '12. Kewarganegaraan');
 isiKotak($pdf, '', 25);
 $pdf->Cell(0, $t1, '', 'R', 1);
 
-labelForm($pdf, '13. Tanggal Penetapan Pengadilan');
+labelForm($pdf, '13. Nomor Penetapan Pengadilan');
+isiKotak($pdf, '', 25);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '14. Tanggal Penetapan Pengadilan');
 $pdf->Cell(4 * $t1, $t1, 'Tgl : ', 0, 0, 'C');
 isiKotak($pdf, '', 2);
 $pdf->Cell(4 * $t1, $t1, 'Bln : ', 0, 0, 'C');
@@ -1103,17 +1107,70 @@ $pdf->Cell(4 * $t1, $t1, 'Thn : ', 0, 0, 'C');
 isiKotak($pdf, '', 4);
 $pdf->Cell(0, $t1, '', 'R', 1);
 
-labelForm($pdf, '14. Nomor Penetapan Pengadilan');
-isiKotak($pdf, '', 25);
-$pdf->Cell(0, $t1, '', 'R', 1);
-
 labelForm($pdf, '15. Nama Lembaga Pengadilan');
 isiKotak($pdf, '', 20);
 $pdf->Cell(0, $t1, '', 'R', 1);
 
 $pdf->Cell(0, $t1, '', 'LBR', 1, 'L');
-$pdf->Ln(1);
+$pdf->Ln(2);
 //END OF PENGESAHAN ANAK
+
+//PERUBAHAN NAMA
+$pdf->SetFont('Times', 'B', $fz2);
+$pdf->Cell(0, $t1, 'PERUBAHAN NAMA', 'LTR', 1, 'L');
+
+$pdf->SetFont('Times', '', $fz1);
+
+labelForm($pdf, '1. Nama Lama');
+isiKotak($pdf, '', 30);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '2. Nama Baru');
+isiKotak($pdf, '', 30);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '3. Nomor Akta Kelahiran');
+isiKotak($pdf, '', 20);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '4. Nama Ayah/Ibu/Wali');
+isiKotak($pdf, '', 30);
+$pdf->Cell(0, $t1, '', 'R', 1);
+$pdf->Cell(0, $t1, '  (bagi yang di bawah umur)', 'LR', 1);
+
+labelForm($pdf, '5. NIK Ayah/Ibu/Wali');
+isiKotak($pdf, '', 16);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '6. Kewarganegaraan');
+isiKotak($pdf, '', 30);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '7. Nomor Penetapan Pengadilan');
+isiKotak($pdf, '', 25);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '8. Tanggal Penetapan Pengadilan');
+$pdf->Cell(4 * $t1, $t1, 'Tgl : ', 0, 0, 'C');
+isiKotak($pdf, '', 2);
+$pdf->Cell(4 * $t1, $t1, 'Bln : ', 0, 0, 'C');
+isiKotak($pdf, '', 2);
+$pdf->Cell(4 * $t1, $t1, 'Thn : ', 0, 0, 'C');
+isiKotak($pdf, '', 4);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '9. Nama Lembaga Pengadilan');
+isiKotak($pdf, '', 20);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+$pdf->Cell(0, $t1, '', 'LBR', 1, 'L');
+$pdf->Ln(2);
+//END OF PERUBAHAN NAMA
+
+//HALAMAN 4
+$pdf->AddPage();
+
+
 
 
 $pdf->Output();
