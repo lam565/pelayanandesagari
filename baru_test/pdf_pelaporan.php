@@ -602,7 +602,7 @@ $pdf->Cell(0, $t1, '', 'R', 1);
 $pdf->Cell(0,$t1,'    agar mengisi formulir tambahan ','LR',1);
 $pdf->Cell(0,$t1,'    nama anak dan akta kelahiran anak ','LR',1);
 
-$pdf->Ln(1);
+$pdf->Cell(0,1,'','LR',1);
 
 $pdf->SetFont('Times', 'B', $fz2);
 $pdf->Cell(0, $t2, 'Bagi Pemohon Pembatalan Perkawinan Harap Mengisi Data di Bawah ini:', 'LR', 1, 'L');
@@ -661,6 +661,104 @@ $pdf->Cell(0, $t1, '', 'R', 1);
 $pdf->Cell(0, $t1, '', 'LBR', 1, 'L');
 $pdf->Ln(1);
 //END OF PERKAWINAN
+
+//PERCERAIAN ATAU PEMBATALAN PERCERAIAN
+$pdf->SetFont('Times', 'B', $fz2);
+$pdf->Cell(0, $t2, 'PERCERAIAN ATAU PEMBATALAN PERCERAIAN', 'LTR', 1, 'L');
+$pdf->Cell(0,1,'','LR',1);
+$pdf->Cell(0, $t2, 'Yang mengajukan perceraian / pembatalan perceraian','LR',1,'L');
+
+
+$pdf->SetFont('Times', '', $fz1);
+
+labelForm($pdf, '1. Nomor Akta Perkawinan');
+isiKotak($pdf, '', 20);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '2. Tanggal Akta Perkawinan');
+$pdf->Cell(4 * $t1, $t1, 'Tgl : ', 0, 0, 'C');
+isiKotak($pdf, '', 2);
+$pdf->Cell(4 * $t1, $t1, 'Bln : ', 0, 0, 'C');
+isiKotak($pdf, '', 2);
+$pdf->Cell(4 * $t1, $t1, 'Thn : ', 0, 0, 'C');
+isiKotak($pdf, '', 4);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '3. Tempat Pencatatan Perkawinan');
+isiKotak($pdf, '', 25);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '4. Nama Pengadilan');
+isiKotak($pdf, '', 20);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '5. Tanggal Putusan Pengadilan');
+$pdf->Cell(4 * $t1, $t1, 'Tgl : ', 0, 0, 'C');
+isiKotak($pdf, '', 2);
+$pdf->Cell(4 * $t1, $t1, 'Bln : ', 0, 0, 'C');
+isiKotak($pdf, '', 2);
+$pdf->Cell(4 * $t1, $t1, 'Thn : ', 0, 0, 'C');
+isiKotak($pdf, '', 4);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '6. Nomor Putusan Pengadilan');
+isiKotak($pdf, '', 20);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '7. Nomor Surat Keterangan Panitera Pengadilan');
+isiKotak($pdf, '', 20);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '8. Tanggal Surat Keterangan Panitera Pengadilan');
+$pdf->Cell(4 * $t1, $t1, 'Tgl : ', 0, 0, 'C');
+isiKotak($pdf, '', 2);
+$pdf->Cell(4 * $t1, $t1, 'Bln : ', 0, 0, 'C');
+isiKotak($pdf, '', 2);
+$pdf->Cell(4 * $t1, $t1, 'Thn : ', 0, 0, 'C');
+isiKotak($pdf, '', 4);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '9. Tanggal Melapor');
+$pdf->Cell(4 * $t1, $t1, 'Tgl : ', 0, 0, 'C');
+isiKotak($pdf, '', 2);
+$pdf->Cell(4 * $t1, $t1, 'Bln : ', 0, 0, 'C');
+isiKotak($pdf, '', 2);
+$pdf->Cell(4 * $t1, $t1, 'Thn : ', 0, 0, 'C');
+isiKotak($pdf, '', 4);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+$pdf->Cell(0,1,'','LR',1);
+
+$pdf->SetFont('Times', 'B', $fz2);
+$pdf->Cell(0, $t2, 'Bagi Pemohon Pembatalan Perceraian Harap Mengisi Data di Bawah ini:', 'LR', 1, 'L');
+
+$pdf->SetFont('Times', '', $fz1);
+
+labelForm($pdf, '1. Nomor Akta Perceraian');
+isiKotak($pdf, '', 20);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '2. Tanggal Akta Perceraian');
+$pdf->Cell(4 * $t1, $t1, 'Tgl : ', 0, 0, 'C');
+isiKotak($pdf, '', 2);
+$pdf->Cell(4 * $t1, $t1, 'Bln : ', 0, 0, 'C');
+isiKotak($pdf, '', 2);
+$pdf->Cell(4 * $t1, $t1, 'Thn : ', 0, 0, 'C');
+isiKotak($pdf, '', 4);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '3. Tanggal Pelaporan Perceraian dari Luar Negeri');
+$pdf->Cell(4 * $t1, $t1, 'Tgl : ', 0, 0, 'C');
+isiKotak($pdf, '', 2);
+$pdf->Cell(4 * $t1, $t1, 'Bln : ', 0, 0, 'C');
+isiKotak($pdf, '', 2);
+$pdf->Cell(4 * $t1, $t1, 'Thn : ', 0, 0, 'C');
+isiKotak($pdf, '', 4);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+$pdf->Cell(0, $t1, '', 'LBR', 1, 'L');
+$pdf->Ln(1);
+//END OF PERCERAIAN
 
 
 $pdf->Output();
