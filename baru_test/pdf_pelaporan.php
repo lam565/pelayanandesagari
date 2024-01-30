@@ -7,31 +7,31 @@ function isiKotak($pdf, $kata, $tKotak)
     $len = strlen($kata);
     $ckata = str_split($kata);
     for ($k = 0; $k < $len; $k++) {
-        $pdf->Cell(4, 3.5, $ckata[$k], 1, 0, 'C');
+        $pdf->Cell(4, 3.4, $ckata[$k], 1, 0, 'C');
     }
     while ($k < $tKotak) {
-        $pdf->Cell(4, 3.5, '', 1, 0, 'C');
+        $pdf->Cell(4, 3.4, '', 1, 0, 'C');
         $k++;
     }
 }
 //FUNGSI LABEL
 function labelForm($pdf, $label)
 {
-    $pdf->Cell(60, 3.5, $label, 'L', 0, 'L');
-    $pdf->Cell(3.5, 3.5, ':', 0, 0, 'L');
+    $pdf->Cell(60, 3.4, $label, 'L', 0, 'L');
+    $pdf->Cell(3.4, 3.4, ':', 0, 0, 'L');
 }
 
 
 $pdf = new FPDF('P', 'mm', 'A4'); //A4 = 210 mm x 297mm
 $pdf->Open();
-$pdf->SetMargins(10, 8);
+$pdf->SetMargins(10, 5);
 $pdf->AddPage();
 
-$t1 = 3.5;
+$t1 = 3.4;
 $t2 = 4;
 $tab = 60;
 $fz1 = 8;
-$fz2 = 10;
+$fz2 = 9;
 
 $pdf->SetFont('Arial', 'B', 10);
 $pdf->Cell(145);
@@ -361,7 +361,7 @@ $pdf->AddPage();
 
 //YANG LAHIR MATI
 $pdf->SetFont('Times', 'B', $fz2);
-$pdf->Cell(0, $t2, 'YANG LAHIR MATI', 'LTR', 1, 'L');
+$pdf->Cell(0, $t1, 'YANG LAHIR MATI', 'LTR', 1, 'L');
 
 $pdf->SetFont('Times', '', $fz1);
 labelForm($pdf, '1. Lamanya dalam kandungan');
@@ -404,26 +404,26 @@ $pdf->Cell(0, $t1, '', 'R', 1);
 
 labelForm($pdf, '6. Tempat dilahirkan');
 isiKotak($pdf, '', 1);
-$pdf->Cell(5 * $t1, $t1, '1. RS/RB ', 0, 0, 'L');
+$pdf->Cell(6 * $t1, $t1, '1. RS/RB ', 0, 0, 'L');
 isiKotak($pdf, '', 1);
-$pdf->Cell(7 * $t1, $t1, '2. Puskesmas ', 0, 0, 'L');
+$pdf->Cell(6 * $t1, $t1, '2. Puskesmas ', 0, 0, 'L');
 isiKotak($pdf, '', 1);
-$pdf->Cell(8 * $t1, $t1, '3. Polides ', 0, 0, 'L');
+$pdf->Cell(6 * $t1, $t1, '3. Polides ', 0, 0, 'L');
 isiKotak($pdf, '', 1);
-$pdf->Cell(7 * $t1, $t1, '4. Rumah ', 0, 0, 'L');
+$pdf->Cell(6 * $t1, $t1, '4. Rumah ', 0, 0, 'L');
 isiKotak($pdf, '', 1);
-$pdf->Cell(7 * $t1, $t1, '5. Lainnya ', 0, 0, 'L');
+$pdf->Cell(6 * $t1, $t1, '5. Lainnya ', 0, 0, 'L');
 $pdf->Cell(0, $t1, '', 'R', 1);
 
 labelForm($pdf, '7. Penolong Kelahiran');
 isiKotak($pdf, '', 1);
-$pdf->Cell(7 * $t1, $t1, '1. Dokter ', 0, 0, 'L');
+$pdf->Cell(6 * $t1, $t1, '1. Dokter ', 0, 0, 'L');
 isiKotak($pdf, '', 1);
-$pdf->Cell(10 * $t1, $t1, '2. Bidan/Perawat ', 0, 0, 'L');
+$pdf->Cell(6 * $t1, $t1, '2. Bidan/Perawat ', 0, 0, 'L');
 isiKotak($pdf, '', 1);
-$pdf->Cell(7 * $t1, $t1, '3. Dukun ', 0, 0, 'L');
+$pdf->Cell(6 * $t1, $t1, '3. Dukun ', 0, 0, 'L');
 isiKotak($pdf, '', 1);
-$pdf->Cell(7 * $t1, $t1, '4. Lainnya ', 0, 0, 'L');
+$pdf->Cell(6 * $t1, $t1, '4. Lainnya ', 0, 0, 'L');
 $pdf->Cell(0, $t1, '', 'R', 1);
 
 labelForm($pdf, '8. Sebab lahir mati');
@@ -452,7 +452,7 @@ $pdf->Ln(1);
 
 //PERKAWINAN ATAU PEMBATALAN PERKAWINAN
 $pdf->SetFont('Times', 'B', $fz2);
-$pdf->Cell(0, $t2, 'PERKAWINAN ATAU PEMBATALAN PERKAWINAN', 'LTR', 1, 'L');
+$pdf->Cell(0, $t1, 'PERKAWINAN ATAU PEMBATALAN PERKAWINAN', 'LTR', 1, 'L');
 
 $pdf->SetFont('Times', '', $fz1);
 
@@ -595,12 +595,11 @@ labelForm($pdf, '26. Tanggal Akta Notaris');
 isiKotak($pdf, '', 20);
 $pdf->Cell(0, $t1, '', 'R', 1);
 
-labelForm($pdf, '27. Jumlah Anak (Jika ada');
+labelForm($pdf, '27. Jumlah Anak (Jika ada agar mengisi formulir');
 isiKotak($pdf, '', 20);
 $pdf->Cell(0, $t1, '', 'R', 1);
 
-$pdf->Cell(0,$t1,'    agar mengisi formulir tambahan ','LR',1);
-$pdf->Cell(0,$t1,'    nama anak dan akta kelahiran anak ','LR',1);
+$pdf->Cell(0,$t1,' tambahan nama anak dan akta kelahiran anak ','LR',1);
 
 $pdf->Cell(0,1,'','LR',1);
 
@@ -664,7 +663,7 @@ $pdf->Ln(1);
 
 //PERCERAIAN ATAU PEMBATALAN PERCERAIAN
 $pdf->SetFont('Times', 'B', $fz2);
-$pdf->Cell(0, $t2, 'PERCERAIAN ATAU PEMBATALAN PERCERAIAN', 'LTR', 1, 'L');
+$pdf->Cell(0, $t1, 'PERCERAIAN ATAU PEMBATALAN PERCERAIAN', 'LTR', 1, 'L');
 $pdf->Cell(0,1,'','LR',1);
 $pdf->Cell(0, $t2, 'Yang mengajukan perceraian / pembatalan perceraian','LR',1,'L');
 
@@ -759,6 +758,71 @@ $pdf->Cell(0, $t1, '', 'R', 1);
 $pdf->Cell(0, $t1, '', 'LBR', 1, 'L');
 $pdf->Ln(1);
 //END OF PERCERAIAN
+
+//KEMATIAN
+$pdf->SetFont('Times', 'B', $fz2);
+$pdf->Cell(0, $t1, 'KEMATIAN', 'LTR', 1, 'L');
+
+$pdf->SetFont('Times', '', $fz1);
+
+labelForm($pdf, '1. NIK');
+isiKotak($pdf, '', 16);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '2. Nama Lengkap');
+isiKotak($pdf, '', 30);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '3. Tanggal Kematian');
+$pdf->Cell(4 * $t1, $t1, 'Tgl : ', 0, 0, 'C');
+isiKotak($pdf, '', 2);
+$pdf->Cell(4 * $t1, $t1, 'Bln : ', 0, 0, 'C');
+isiKotak($pdf, '', 2);
+$pdf->Cell(4 * $t1, $t1, 'Thn : ', 0, 0, 'C');
+isiKotak($pdf, '', 4);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '4. Pukul');
+isiKotak($pdf, '', 2);
+$pdf->Cell(1 * $t1, $t1, ':', 0, 0, 'C');
+isiKotak($pdf, '', 2);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '5. Sebab Kematian');
+isiKotak($pdf, '', 1);
+$pdf->Cell(8 * $t1, $t1, '1. Sakit Biasa / Tua ', 0, 0, 'L');
+isiKotak($pdf, '', 1);
+$pdf->Cell(8 * $t1, $t1, '2. Wabah Penyakit ', 0, 0, 'L');
+isiKotak($pdf, '', 1);
+$pdf->Cell(8 * $t1, $t1, '3. Kecelakaan ', 0, 0, 'L');
+$pdf->Cell(0, $t1, '', 'R', 1);
+$pdf->Cell($tab + $t1, $t1, ' ','L',0);
+isiKotak($pdf, '', 1);
+$pdf->Cell(8 * $t1, $t1, '4. Kriminalitas ', 0, 0, 'L');
+isiKotak($pdf, '', 1);
+$pdf->Cell(8 * $t1, $t1, '5. Bunuh Diri ', 0, 0, 'L');
+isiKotak($pdf, '', 1);
+$pdf->Cell(8 * $t1, $t1, '6. Lainnya ', 0, 0, 'L');
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '6. Tempat Kematian');
+isiKotak($pdf, '', 30);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '7. Yang menerangkan');
+isiKotak($pdf, '', 1);
+$pdf->Cell(5 * $t1, $t1, '1. Dokter ', 0, 0, 'L');
+isiKotak($pdf, '', 1);
+$pdf->Cell(8 * $t1, $t1, '2. Tenaga Kesehatan ', 0, 0, 'L');
+isiKotak($pdf, '', 1);
+$pdf->Cell(6 * $t1, $t1, '3. Kepolisian ', 0, 0, 'L');
+isiKotak($pdf, '', 1);
+$pdf->Cell(6 * $t1, $t1, '4. Lainnya ', 0, 0, 'L');
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+$pdf->Cell(0, $t1, '', 'LBR', 1, 'L');
+$pdf->Ln(1);
+//END OF KEMATIAN
 
 
 $pdf->Output();
