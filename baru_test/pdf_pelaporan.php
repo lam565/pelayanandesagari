@@ -29,7 +29,7 @@ $pdf->AddPage();
 
 $t1 = 3.4;
 $t2 = 4;
-$tab = 60;
+$tab = 65;
 $fz1 = 8;
 $fz2 = 9;
 
@@ -436,7 +436,7 @@ $pdf->Cell(5 * $t1, $t1, '1. Dokter ', 0, 0, 'L');
 isiKotak($pdf, '', 1);
 $pdf->Cell(8 * $t1, $t1, '2. Bidan/Perawat ', 0, 0, 'L');
 isiKotak($pdf, '', 1);
-$pdf->Cell(7 * $t1, $t1, '3. Tenaga Kes ', 0, 0, 'L');
+$pdf->Cell(6 * $t1, $t1, '3. Tenaga Kes ', 0, 0, 'L');
 isiKotak($pdf, '', 1);
 $pdf->Cell(6 * $t1, $t1, '4. Kepolisian ', 0, 0, 'L');
 isiKotak($pdf, '', 1);
@@ -1169,6 +1169,87 @@ $pdf->Ln(2);
 
 //HALAMAN 4
 $pdf->AddPage();
+
+//PERUBAHAN STATUS KEWARGANEGARAAN
+$pdf->SetFont('Times', 'B', $fz2);
+$pdf->Cell(0, $t1, 'PERUBAHAN STATUS KEWARGANEGARAAN', 'LTR', 1, 'L');
+
+$pdf->SetFont('Times', '', $fz1);
+
+labelForm($pdf, '1. Kewarganegaraan Baru');
+isiKotak($pdf, '', 25);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '2. No Akta Kelahiran');
+isiKotak($pdf, '', 25);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '3. No Akta Perkawinan');
+isiKotak($pdf, '', 25);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '4. Nama Suami atau Istri');
+isiKotak($pdf, '', 30);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '5. NIK Suami atau Istri');
+isiKotak($pdf, '', 16);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '6. Nomor Paspor');
+isiKotak($pdf, '', 25);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '7. Nomor Afidavit');
+isiKotak($pdf, '', 25);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '8. Nomor Keputusan Presiden');
+isiKotak($pdf, '', 25);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '9. Tanggal/Bulan/Tahun');
+$pdf->Cell(4 * $t1, $t1, 'Tgl : ', 0, 0, 'C');
+isiKotak($pdf, '', 2);
+$pdf->Cell(4 * $t1, $t1, 'Bln : ', 0, 0, 'C');
+isiKotak($pdf, '', 2);
+$pdf->Cell(4 * $t1, $t1, 'Thn : ', 0, 0, 'C');
+isiKotak($pdf, '', 4);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '10. Nomor Berita Acara Sumpah/Janji Setia');
+isiKotak($pdf, '', 25);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '11. Nama Jabatan yang menerbitkan BAS/Janji Setia');
+isiKotak($pdf, '', 30);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '12. Tanggal/Bulan/Tahun');
+$pdf->Cell(4 * $t1, $t1, 'Tgl : ', 0, 0, 'C');
+isiKotak($pdf, '', 2);
+$pdf->Cell(4 * $t1, $t1, 'Bln : ', 0, 0, 'C');
+isiKotak($pdf, '', 2);
+$pdf->Cell(4 * $t1, $t1, 'Thn : ', 0, 0, 'C');
+isiKotak($pdf, '', 4);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '13. No. Keputusan Menteri (Bidang Kewarganegaraan)');
+isiKotak($pdf, '', 25);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '12. Tanggal/Bulan/Tahun');
+$pdf->Cell(4 * $t1, $t1, 'Tgl : ', 0, 0, 'C');
+isiKotak($pdf, '', 2);
+$pdf->Cell(4 * $t1, $t1, 'Bln : ', 0, 0, 'C');
+isiKotak($pdf, '', 2);
+$pdf->Cell(4 * $t1, $t1, 'Thn : ', 0, 0, 'C');
+isiKotak($pdf, '', 4);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+$pdf->Cell(0, $t1, '', 'LBR', 1, 'L');
+$pdf->Ln(2);
+//END OF PERUBAHAN STATUS
 
 
 
