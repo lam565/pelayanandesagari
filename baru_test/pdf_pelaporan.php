@@ -599,9 +599,9 @@ labelForm($pdf, '27. Jumlah Anak (Jika ada agar mengisi formulir');
 isiKotak($pdf, '', 20);
 $pdf->Cell(0, $t1, '', 'R', 1);
 
-$pdf->Cell(0,$t1,' tambahan nama anak dan akta kelahiran anak ','LR',1);
+$pdf->Cell(0, $t1, ' tambahan nama anak dan akta kelahiran anak ', 'LR', 1);
 
-$pdf->Cell(0,1,'','LR',1);
+$pdf->Cell(0, 1, '', 'LR', 1);
 
 $pdf->SetFont('Times', 'B', $fz2);
 $pdf->Cell(0, $t2, 'Bagi Pemohon Pembatalan Perkawinan Harap Mengisi Data di Bawah ini:', 'LR', 1, 'L');
@@ -664,8 +664,8 @@ $pdf->Ln(1);
 //PERCERAIAN ATAU PEMBATALAN PERCERAIAN
 $pdf->SetFont('Times', 'B', $fz2);
 $pdf->Cell(0, $t1, 'PERCERAIAN ATAU PEMBATALAN PERCERAIAN', 'LTR', 1, 'L');
-$pdf->Cell(0,1,'','LR',1);
-$pdf->Cell(0, $t2, 'Yang mengajukan perceraian / pembatalan perceraian','LR',1,'L');
+$pdf->Cell(0, 1, '', 'LR', 1);
+$pdf->Cell(0, $t2, 'Yang mengajukan perceraian / pembatalan perceraian', 'LR', 1, 'L');
 
 
 $pdf->SetFont('Times', '', $fz1);
@@ -726,7 +726,7 @@ $pdf->Cell(4 * $t1, $t1, 'Thn : ', 0, 0, 'C');
 isiKotak($pdf, '', 4);
 $pdf->Cell(0, $t1, '', 'R', 1);
 
-$pdf->Cell(0,1,'','LR',1);
+$pdf->Cell(0, 1, '', 'LR', 1);
 
 $pdf->SetFont('Times', 'B', $fz2);
 $pdf->Cell(0, $t2, 'Bagi Pemohon Pembatalan Perceraian Harap Mengisi Data di Bawah ini:', 'LR', 1, 'L');
@@ -796,7 +796,7 @@ $pdf->Cell(8 * $t1, $t1, '2. Wabah Penyakit ', 0, 0, 'L');
 isiKotak($pdf, '', 1);
 $pdf->Cell(8 * $t1, $t1, '3. Kecelakaan ', 0, 0, 'L');
 $pdf->Cell(0, $t1, '', 'R', 1);
-$pdf->Cell(68.4, $t1, '','L',0);
+$pdf->Cell(68.4, $t1, '', 'L', 0);
 isiKotak($pdf, '', 1);
 $pdf->Cell(8 * $t1, $t1, '4. Kriminalitas ', 0, 0, 'L');
 isiKotak($pdf, '', 1);
@@ -1251,7 +1251,185 @@ $pdf->Cell(0, $t1, '', 'LBR', 1, 'L');
 $pdf->Ln(2);
 //END OF PERUBAHAN STATUS
 
+//PERUBAHAN PERISTIWA PENTING LAINNYA
+$pdf->SetFont('Times', 'B', $fz2);
+$pdf->Cell(0, $t1, 'PERUBAHAN PERISTIWA PENTING LAINNYA', 'LTR', 1, 'L');
 
+$pdf->SetFont('Times', '', $fz1);
+
+labelForm($pdf, '1. No Akta Kelahiran');
+isiKotak($pdf, '', 25);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '2. Jenis Kelamin Lama');
+isiKotak($pdf, '', 1);
+$pdf->Cell(8 * $t1, $t1, '1. Laki - Laki ', 0, 0, 'L');
+isiKotak($pdf, '', 1);
+$pdf->Cell(8 * $t1, $t1, '2. Perempuan ', 0, 0, 'L');
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '3. Jenis Kelamin Baru');
+isiKotak($pdf, '', 1);
+$pdf->Cell(8 * $t1, $t1, '1. Laki - Laki ', 0, 0, 'L');
+isiKotak($pdf, '', 1);
+$pdf->Cell(8 * $t1, $t1, '2. Perempuan ', 0, 0, 'L');
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '4. Nomor Penetapan Pengadilan');
+isiKotak($pdf, '', 25);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '5. Tanggal Penetapan Pengadilan');
+$pdf->Cell(4 * $t1, $t1, 'Tgl : ', 0, 0, 'C');
+isiKotak($pdf, '', 2);
+$pdf->Cell(4 * $t1, $t1, 'Bln : ', 0, 0, 'C');
+isiKotak($pdf, '', 2);
+$pdf->Cell(4 * $t1, $t1, 'Thn : ', 0, 0, 'C');
+isiKotak($pdf, '', 4);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '6. Nama Lembaga Pengadilan');
+isiKotak($pdf, '', 30);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+$pdf->Cell(0, $t1, '', 'LBR', 1, 'L');
+$pdf->Ln(2);
+//END OF PERUBAHAN LAINNYA
+
+//PEMBETULAN AKTA
+$pdf->SetFont('Times', 'B', $fz2);
+$pdf->Cell(0, $t1, 'PEMBETULAN AKTA', 'LTR', 1, 'L');
+
+$pdf->SetFont('Times', '', $fz1);
+
+labelForm($pdf, '1. No Akta yang Akan dibetulkan/ditarik');
+isiKotak($pdf, '', 25);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '2. Nama Ayah/Ibu/Wali (yang di bawah umur)');
+isiKotak($pdf, '', 30);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '3. NIK Ayah/Ibu/Wali (yang di bawah umur)');
+isiKotak($pdf, '', 16);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+$pdf->Cell(0, $t1, '', 'LR', 1);
+
+$pdf->SetFont('Times', 'B', $fz2);
+$pdf->Cell(0, $t1, 'PEMBATALAN AKTA', 'LR', 1, 'L');
+
+$pdf->SetFont('Times', '', $fz1);
+
+labelForm($pdf, '1. Akta yang dibatalkan');
+isiKotak($pdf, '', 25);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '2. No Akta yang dibatalkan');
+isiKotak($pdf, '', 25);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '3. Nomor Putusan Pengadilan');
+isiKotak($pdf, '', 25);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '4. Tanggal Putusan Pengadilan');
+$pdf->Cell(4 * $t1, $t1, 'Tgl : ', 0, 0, 'C');
+isiKotak($pdf, '', 2);
+$pdf->Cell(4 * $t1, $t1, 'Bln : ', 0, 0, 'C');
+isiKotak($pdf, '', 2);
+$pdf->Cell(4 * $t1, $t1, 'Thn : ', 0, 0, 'C');
+isiKotak($pdf, '', 4);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '5. Nama Lembaga Pengadilan');
+isiKotak($pdf, '', 30);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+$pdf->Cell(0, $t1, '', 'LBR', 1, 'L');
+$pdf->Ln(2);
+//END OF PEMBETULAN AKTA
+
+//PELAPORAN PENCATATAN SIPIL DARI LUAR NEGERI
+
+$pdf->SetFont('Times', 'B', $fz2);
+$pdf->Cell(0, $t1, 'PEMBETULAN AKTA', 'LTR', 1, 'L');
+
+$pdf->SetFont('Times', '', $fz1);
+
+labelForm($pdf, '1. Jenis Peristiwa Penting');
+isiKotak($pdf, '', 1);
+$pdf->Cell(5 * $t1, $t1, '1. Kelahiran ', 0, 0, 'L');
+isiKotak($pdf, '', 1);
+$pdf->Cell(6 * $t1, $t1, '2. Perkawinan ', 0, 0, 'L');
+isiKotak($pdf, '', 1);
+$pdf->Cell(5 * $t1, $t1, '3. Perceraian ', 0, 0, 'L');
+isiKotak($pdf, '', 1);
+$pdf->Cell(5 * $t1, $t1, '4. Kematian ', 0, 0, 'L');
+isiKotak($pdf, '', 1);
+$pdf->Cell(7 * $t1, $t1, '5. Pengangkatan Anak ', 0, 0, 'L');
+$pdf->Cell(0, $t1, '', 'R', 1);
+$pdf->Cell(68.4, $t1, '', 'L', 0);
+isiKotak($pdf, '', 1);
+$pdf->Cell(0, $t1, '6. Pelepasan Kewarganegaraan RI ', 'R', 1, 'L');
+
+labelForm($pdf, '2. Nomor Surat Keterangan Pelaporan Pencatatan');
+isiKotak($pdf, '', 25);
+$pdf->Cell(0, $t1, '', 'R', 1);
+$pdf->Cell(0, $t1, 'Sipil dari Perwakilan RI', 'LR', 1, 'L');
+
+labelForm($pdf, '3. Tanggal Surat Keterangan Pelaporan Pencatatan');
+isiKotak($pdf, '', 25);
+$pdf->Cell(0, $t1, '', 'R', 1);
+$pdf->Cell(0, $t1, 'Sipil dari Perwakilan RI', 'LR', 1, 'L');
+
+labelForm($pdf, '4. Kantor Perwakilan yang melakukan Pencatatan');
+isiKotak($pdf, '', 25);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '5. Nomor Bukti Pencatatan Sipil dari Negara Setempat');
+isiKotak($pdf, '', 25);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+labelForm($pdf, '6. Tanggal Penerbitan dari Negara Setempat');
+isiKotak($pdf, '', 25);
+$pdf->Cell(0, $t1, '', 'R', 1);
+
+$pdf->Cell(0, $t1, '', 'LBR', 1, 'L');
+$pdf->Ln(2);
+//END OF PELAPORAN LN
+
+//TANDA TANGAN
+$pdf->Ln(5);
+$pdf->SetFont('Times', '', $fz2);
+
+$pdf->Cell(50, $t2, '', 0, 0, 'C');
+$pdf->Cell(100, $t2, '', 0, 0);
+$pdf->Cell(50, $t2, '........., ...................20....', 0, 1, 'C');
+
+$pdf->Cell(50, $t2, '', 0, 0, 'C');
+$pdf->Cell(100, $t2, '', 0, 0);
+$pdf->Cell(50, $t2, 'Pelapor', 0, 1, 'C');
+
+$pdf->Cell(50, $t2, 'Mengetahui:', 0, 0, 'C');
+$pdf->Cell(100, $t2, '', 0, 0);
+$pdf->Cell(50, $t2, '', 0, 1, 'C');
+
+$pdf->Cell(50, $t2, 'Kepala Desa/Lurah', 0, 0, 'C');
+$pdf->Cell(100, $t2, '', 0, 0);
+$pdf->Cell(50, $t2, '', 0, 1, 'C');
+
+$pdf->Cell(50, $t2, 'Pejabat Dukcapil yang Membidangi', 0, 0, 'C');
+$pdf->Cell(100, $t2, '', 0, 0);
+$pdf->Cell(50, $t2, '', 0, 1, 'C');
+
+$pdf->Ln(10);
+
+$pdf->Cell(50, $t2, '(....................)', 0, 0, 'C');
+$pdf->Cell(100, $t2, '', 0, 0);
+$pdf->Cell(50, $t2, '(....................)', 0, 1, 'C');
+
+//END OF TANDA TANGAN
 
 
 $pdf->Output();
