@@ -224,19 +224,19 @@ session_start();
 												<div class="form-group">
 													<label class="col-md-3 control-label" for="inputDefault">Tempat, Tanggal Lahir</label>
 													<div class="col-md-6">
-														<input type="text" required="required" placeholder="Tempat Lahir" class="form-control" name="no_kk" id="no_kk" value="">
+														<input type="text" required="required" placeholder="Tempat Lahir" class="form-control" name="tmpt_lahir_s" id="tmpt_lahir_s" value="">
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-md-3 control-label" for="inputDefault"></label>
 													<div class="col-md-2">
-														<input type="text" required="required" placeholder="Tgl" class="form-control" name="no_kk" id="no_kk" value="">
+														<input type="text" required="required" placeholder="Tgl" class="form-control" name="tgl_lahir_s" id="tgl_lahir_s" value="">
 													</div>
 													<div class="col-md-2">
-														<input type="text" required="required" placeholder="Bln" class="form-control" name="no_kk" id="no_kk" value="">
+														<input type="text" required="required" placeholder="Bln" class="form-control" name="bln_lahir_s" id="bln_lahir_s" value="">
 													</div>
 													<div class="col-md-2">
-														<input type="text" required="required" placeholder="Tahun" class="form-control" name="no_kk" id="no_kk" value="">
+														<input type="text" required="required" placeholder="Tahun" class="form-control" name="thn_lahir_s" id="thn_lahir_s" value="">
 													</div>
 
 
@@ -244,7 +244,7 @@ session_start();
 												<div class="form-group">
 													<label class="col-md-3 control-label" for="inputDefault">Kewarganegaraan</label>
 													<div class="col-md-6">
-														<input type="text" required="required" placeholder="Kewarganegaraan" class="form-control" name="no_kk" id="no_kk" value="">
+														<input type="text" required="required" placeholder="Kewarganegaraan" class="form-control" name="kewarganegaraan_s" id="kewarganegaraan_s" value="">
 													</div>
 												</div>
 											</div>
@@ -272,19 +272,19 @@ session_start();
 												<div class="form-group">
 													<label class="col-md-3 control-label" for="inputDefault">Tempat, Tanggal Lahir</label>
 													<div class="col-md-6">
-														<input type="text" required="required" placeholder="Tempat Lahir" class="form-control" name="no_kk" id="no_kk" value="">
+														<input type="text" required="required" placeholder="Tempat Lahir" class="form-control" name="tmpt_lahir_i" id="tmpt_lahir_i" value="">
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-md-3 control-label" for="inputDefault"></label>
 													<div class="col-md-2">
-														<input type="text" required="required" placeholder="Tgl" class="form-control" name="no_kk" id="no_kk" value="">
+														<input type="text" required="required" placeholder="Tgl" class="form-control" name="tgl_lahir_i" id="tgl_lahir_i" value="">
 													</div>
 													<div class="col-md-2">
-														<input type="text" required="required" placeholder="Bln" class="form-control" name="no_kk" id="no_kk" value="">
+														<input type="text" required="required" placeholder="Bln" class="form-control" name="bln_lahir_i" id="bln_lahir_i" value="">
 													</div>
 													<div class="col-md-2">
-														<input type="text" required="required" placeholder="Tahun" class="form-control" name="no_kk" id="no_kk" value="">
+														<input type="text" required="required" placeholder="Tahun" class="form-control" name="thn_lahir_i" id="thn_lahir_i" value="">
 													</div>
 
 
@@ -293,7 +293,7 @@ session_start();
 												<div class="form-group">
 													<label class="col-md-3 control-label" for="inputDefault">Kewarganegaraan</label>
 													<div class="col-md-6">
-														<input type="text" required="required" placeholder="Kewarganegaraan " class="form-control" name="no_kk" id="no_kk" value="">
+														<input type="text" required="required" placeholder="Kewarganegaraan " class="form-control" name="kewarganegaraan_i" id="kewarganegaraan_i" value="">
 													</div>
 												</div>
 											</div>
@@ -758,8 +758,10 @@ session_start();
 					$("#no_kk").val("" + suggestion.no_kk);
 					$("#nik_ayah").val("" + suggestion.nik);
 					$("#nama_ayah").val("" + suggestion.nama);
+					$("#tmpt_lahir_s").val("" + suggestion.tmpt_lahir_s);
 					$("#nik_ibu").val("" + suggestion.nik_istri);
 					$("#nama_ibu").val("" + suggestion.nama_istri);
+					$("#tmpt_lahir_i").val("" + suggestion.tmpt_lahir_i);
 
 				}
 			});
@@ -770,8 +772,18 @@ session_start();
 					$("#no_kk").val("" + suggestion.no_kk);
 					$("#nik_ayah").val("" + suggestion.nik);
 					$("#nama_ayah").val("" + suggestion.nama);
+					$("#tmpt_lahir_s").val("" + suggestion.tmpt_lahir_s);
+					$("#tgl_lahir_s").val("" + suggestion.tgl_lahir_s.substr(8,2));
+					$("#bln_lahir_s").val("" + suggestion.tgl_lahir_s.substr(5,2));
+					$("#thn_lahir_s").val("" + suggestion.tgl_lahir_s.substr(0,4));
+					$("#kewarganegaraan_s").val("" + suggestion.wargan_s);
 					$("#nik_ibu").val("" + suggestion.nik_istri);
 					$("#nama_ibu").val("" + suggestion.nama_istri);
+					$("#tmpt_lahir_i").val("" + suggestion.tmpt_lahir_i);
+					$("#tgl_lahir_i").val("" + suggestion.tgl_lahir_i.substr(8,2));
+					$("#bln_lahir_i").val("" + suggestion.tgl_lahir_i.substr(5,2));
+					$("#kewarganegaraan_i").val("" + suggestion.wargan_i);
+
 
 				}
 			});

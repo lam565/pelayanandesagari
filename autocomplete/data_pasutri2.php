@@ -6,7 +6,7 @@ include "../connect.php";
 $nama = $_GET["query"];
 
 // Query ke database.
-$query  =mysqli_query($connect,"SELECT biodata_wni.NIK,biodata_wni.NAMA_LGKP,biodata_wni.NO_KK FROM biodata_wni,data_keluarga WHERE biodata_wni.NAMA_LGKP LIKE '%$nama%' AND data_keluarga.NO_KK=biodata_wni.NO_KK AND JENIS_KLMIN='1' AND STAT_KWN='2' ORDER BY biodata_wni.NAMA_LGKP");
+$query  =mysqli_query($connect,"SELECT biodata_wni.NIK,biodata_wni.NAMA_LGKP,biodata_wni.NO_KK, biodata_wni.TMPT_LHR, biodata_wni.TGL_LHR FROM biodata_wni,data_keluarga WHERE biodata_wni.NAMA_LGKP LIKE '%$nama%' AND data_keluarga.NO_KK=biodata_wni.NO_KK AND JENIS_KLMIN='1' AND STAT_KWN='2' ORDER BY biodata_wni.NAMA_LGKP");
 
 // Format bentuk data untuk autocomplete.
 while($data=mysqli_fetch_array($query)) {
@@ -17,8 +17,14 @@ while($data=mysqli_fetch_array($query)) {
         'nik'  => $data['NIK'],
         'no_kk' => $data['NO_KK'],
         'nama' => $data['NAMA_LGKP'],
+        'tmpt_lahir_s' => $data['TMPT_LHR'],
+        'tgl_lahir_s' => $data['TGL_LHR'],
+        'wargan_s' => 'WNI',
         'nik_istri' => $istri['NIK'],
-        'nama_istri' => $istri['NAMA_LGKP']
+        'nama_istri' => $istri['NAMA_LGKP'],
+        'tmpt_lahir_i' => $istri['TMPT_LHR'],
+        'tgl_lahir_i' => $istri['TGL_LHR'],
+        'wargan_i' => 'WNI'
     ];
 }
 
