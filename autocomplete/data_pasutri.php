@@ -26,4 +26,3 @@ if (! empty($output)) {
     // Encode ke format JSON.
     echo json_encode($output);
 }
-?>

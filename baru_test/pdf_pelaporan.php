@@ -1403,31 +1403,29 @@ $pdf->Ln(2);
 $pdf->Ln(5);
 $pdf->SetFont('Times', '', $fz2);
 
-$pdf->Cell(50, $t2, '', 0, 0, 'C');
-$pdf->Cell(100, $t2, '', 0, 0);
-$pdf->Cell(50, $t2, '........., ...................20....', 0, 1, 'C');
+$pdf->Cell(60, $t2, '', 0, 0, 'C');
+$pdf->Cell(70, $t2, '', 0, 0);
+$pdf->Cell(60, $t2, '........., ...................20....', 0, 1, 'C');
 
-$pdf->Cell(50, $t2, '', 0, 0, 'C');
-$pdf->Cell(100, $t2, '', 0, 0);
-$pdf->Cell(50, $t2, 'Pelapor', 0, 1, 'C');
+$pdf->Cell(0, $t2, '', 0, 1, 'C');
 
-$pdf->Cell(50, $t2, 'Mengetahui:', 0, 0, 'C');
-$pdf->Cell(100, $t2, '', 0, 0);
-$pdf->Cell(50, $t2, '', 0, 1, 'C');
+$pdf->Cell(60, $t2, 'Mengetahui:', 0, 0, 'C');
+$pdf->Cell(70, $t2, '', 0, 0);
+$pdf->Cell(60, $t2, '', 0, 1, 'C');
 
-$pdf->Cell(50, $t2, 'Kepala Desa/Lurah', 0, 0, 'C');
-$pdf->Cell(100, $t2, '', 0, 0);
-$pdf->Cell(50, $t2, '', 0, 1, 'C');
+$pdf->Cell(60, $t2, 'Kepala Desa/Lurah', 0, 0, 'C');
+$pdf->Cell(70, $t2, '', 0, 0);
+$pdf->Cell(60, $t2, 'Pelapor', 0, 1, 'C');
 
-$pdf->Cell(50, $t2, 'Pejabat Dukcapil yang Membidangi', 0, 0, 'C');
-$pdf->Cell(100, $t2, '', 0, 0);
-$pdf->Cell(50, $t2, '', 0, 1, 'C');
+$pdf->Cell(60, $t2, 'Pejabat Dukcapil yang Membidangi', 0, 0, 'C');
+$pdf->Cell(70, $t2, '', 0, 0);
+$pdf->Cell(60, $t2, '', 0, 1, 'C');
 
 $pdf->Ln(10);
 
-$pdf->Cell(50, $t2, '(....................)', 0, 0, 'C');
-$pdf->Cell(100, $t2, '', 0, 0);
-$pdf->Cell(50, $t2, '(....................)', 0, 1, 'C');
+$pdf->Cell(60, $t2, '(....................)', 0, 0, 'C');
+$pdf->Cell(70, $t2, '', 0, 0);
+$pdf->Cell(60, $t2, '(....................)', 0, 1, 'C');
 
 //END OF TANDA TANGAN
 
